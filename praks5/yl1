@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#
+#kolmnurga hüpotenuusi väärtuse arvutamine
+#
+#skript algab
+#
+echo -n "Sisesta külje a väärtus:"
+read  A
+echo -n "Sisesta külje b väärtus:"
+read B
+Bruut=$(($B**2))
+Aruut=$(($A**2))
+Cruut=$(($Bruut + $Aruut))
+Hypot=`echo "scale=2;sqrt($Cruut)"|bc`
+echo "A = $A"
+echo "B = $B"
+echo "C = $Hypot"
+#
+#skript lõppeb
+#
