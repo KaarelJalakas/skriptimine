@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+#
+#kolmnurga hüpotenuusi väärtuse arvutamine
+#
+#skript algab
+#
+echo -n "Sisesta külje a väärtus:"
+read  A
+echo -n "Sisesta külje b väärtus:"
+read B
+echo -n "Sisesta külje c väärtus:"
+read C
+p=echo "scale=2;$(($A + $B + $C)/2)" | bc
+B=$(($B))
+A=$(($A))
+C=$(($C))
+S=$(($p($p - $A)($p - $B)*($p - $C)))
+Spindala=echo "scale=2;sqrt($S)" | bc
+echo "A = $A"
+echo "B = $B"
+echo "C = $C"
+echo "p = $p"
+echo "S = $Spindala"
+#
+#skript lõppeb
+#
+
