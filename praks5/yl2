@@ -5,23 +5,23 @@
 #
 #skript algab
 #
-echo -n "Sisesta külje a väärtus:"
+echo -n "Sisesta külje A väärtus:"
 read  A
-echo -n "Sisesta külje b väärtus:"
+echo -n "Sisesta külje B väärtus:"
 read B
-echo -n "Sisesta külje c väärtus:"
+echo -n "Sisesta külje C väärtus:"
 read C
-p=echo "scale=2;$(($A + $B + $C)/2)" | bc
-B=$(($B))
-A=$(($A))
-C=$(($C))
-S=$(($p($p - $A)($p - $B)*($p - $C)))
-Spindala=echo "scale=2;sqrt($S)" | bc
+#järgmine rida leiab poole ümbermõõdust
+P=$(bc <<< "scale=2;($A+$B+$C)/2")
+a=$(($A))
+c=$(($C))
+#Leian heroni valemi abil kolmnurga pindala
+S=$(bc <<< "scale=2; sqrt(($P-$A)*($P-$B)*($P-$C)*$P)")
+#Väljastan  valemis kasutatud arvud
 echo "A = $A"
 echo "B = $B"
 echo "C = $C"
-echo "p = $p"
-echo "S = $Spindala"
+echo "S = $S"
 #
 #skript lõppeb
 #
