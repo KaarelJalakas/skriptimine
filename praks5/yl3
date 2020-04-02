@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+#Reiilt tagasituleku päeva väljaselgitamine
+#
+#Skript algab
+#
+echo "Pyhapaev -0, Emaspaev-1, Teisipaev-2, Kolmapaev-3, Neljapaev-4, Reede-5, Laupaev-6"
+#
+echo -n "Siesta kodust lahkumise paeva nr"
+read reisi_algus
+#sisesta reisi kestvus
+echo -n "Sisesta reisi kestvus"
+read kestvus
+#
+#
+Yle_jaanud_reisi_paevad=$(($kestvus%7))
+#
+#Arvutan millisel paeval jouan tagasi
+#
+tagasi=$(($reisi_algus + $Yle_jaanud_reisi_paevad))
+#valjastan tulemuse
+echo "Tagasi jouad paeval nr $tagasi"
+#
+#Skripti lõpp
