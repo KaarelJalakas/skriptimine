@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#Skript, mis väljastab kas tegu on paarisarvuga või paaritu arvuga
+#
+#skript algab
+#
+echo -n "Sisesta suvaline täisarv"
+read arv
+#Arvutab jäägi jagades arvu kahega
+ylejaak=$(( $arv % 2 ))
+
+#If-else funktsioonide abil on võimalik väljastada kas üks või teine tulemus
+if [ $ylejaak -eq 0 ]
+then
+	echo $arv "on paaris"
+else
+	echo $arv " on paaritu"
+fi #lõpetab if struktuuri
