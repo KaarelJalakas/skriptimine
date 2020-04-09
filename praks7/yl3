@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+#Skript, mis tervitab kasutajat vastavalt sisestatud väärtusele
+#
+#skript algab
+#Küsib kellaaja
+echo -n "Siesta kellaaeg täistunnina"
+read kell
+#kontrollib, kas on hommik
+if test $kell -ge 6 -a $kell -lt 12
+then 
+	echo "Tere hommikust"
+#kontrollib, kas on päevane aeg
+elif test $kell -ge 12 -a $kell -lt 18
+then 
+	echo "Tere päevast"
+#kontrollib kas on õhtu
+elif test $kell -ge 18 -a $kell -lt 22
+then
+	echo "Tere õhtust"
+#kontrollib kas on öö
+elif test $kuu -ge 22 -a $kell -lt 24 -o $kell -ge 0 -a $kell -lt 6
+then
+	echo "Head ööd"
+
+#Kui on sisestatud vale aeg
+else
+	echo "Arv ei ole 0 ja 24 vhel"
+fi
+#skripti lõpp
