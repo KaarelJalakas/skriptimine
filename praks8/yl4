@@ -1,0 +1,30 @@
+#!/bin/bash
+#
+#skript, mis tuvastab kas sisestatud on algarv või mitte
+#
+#skript algab
+#
+echo "Sisesta täisarv: "
+read arv
+jagaja=2
+
+#kontrollib, kas arv on 0 või 1
+if [ $sisend -eq 0 -o $sisend -eq 1 ]
+then
+	echo "Sisestatud arv ei ole algarv"
+else #Jagab 2ga nii kaua kuni saab, lõppeb kui jääk on 0
+	jaak=$(($sisend % $jagaja))
+	while [ $jaak -ne 0 ]
+	do
+#Jagaja ühe võrra suurendamine ja selle jagamine
+	jagaja=$((jagaja +1))
+	jaak=$((arv % $jagaja))
+	done
+#Kontrollib, et kas ring on lõppenud ja jagaja on võrdne arvuga
+	if [ $sisend -eq $jagaja ]
+	then
+		echo "$arv on algarv"
+	else
+		echo "$arv ei ole algarv"
+	fi
+fi
