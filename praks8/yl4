@@ -14,7 +14,7 @@ then
 else #Jagab 2ga nii kaua kuni saab, lõppeb kui jääk on 0
 	jaak=$(($arv % $jagaja))
 	while [ $jaak -ne 0 ]
-
+	do
 #Jagaja ühe võrra suurendamine ja selle jagamine
 	jagaja=$((jagaja +1))
 	jaak=$(($arv % $jagaja))
